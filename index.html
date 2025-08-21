@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>USSTUDIOS – Mobile Apps</title>
+<style>
+  :root{
+    --bg:#0f172a;          /* slate-900 */
+    --panel:#111827;       /* gray-900 */
+    --muted:#cbd5e1;       /* slate-300 */
+    --text:#e5e7eb;        /* gray-200 */
+    --accent:#38bdf8;      /* sky-400 */
+    --accent-2:#a78bfa;    /* violet-400 */
+    --radius:18px;
+    --shadow:0 12px 32px rgba(0,0,0,.35);
+    --border:rgba(255,255,255,.08);
+  }
+
+  *{ box-sizing:border-box; }
+  html, body {
+    margin:0; padding:0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans";
+    min-height: 100vh; /* fills embed frame height */
+  }
+
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+
+  .wrap{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 20px 48px;
+  }
+
+  /* Hero */
+  .hero{
+    position: relative;
+    padding: 36px 28px;
+    border-radius: calc(var(--radius) + 6px);
+    background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(167,139,250,.20), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(56,189,248,.20), transparent 60%),
+      linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .brand{ display:flex; gap:16px; align-items:center; }
+  .logo{
+    width:56px; height:56px; border-radius:14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display:grid; place-items:center;
+    box-shadow: 0 8px 22px rgba(56,189,248,.35);
+    flex: 0 0 56px;
+  }
+  .logo svg{ width:34px; height:34px; fill:white; opacity:.95; }
+
+  h1{ margin:0; font-size: clamp(28px, 4vw, 42px); line-height:1.15; letter-spacing:.2px; }
+  .tagline{ color: var(--muted); margin:.4rem 0 0; font-size: clamp(14px, 2.4vw, 18px); }
+
+  /* Grid */
+  .grid{ display:grid; gap:18px; grid-template-columns: 1fr; margin-top:26px; }
+  @media (min-width: 760px){ .grid{ grid-template-columns: 1.1fr .9fr; } }
+
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+  }
+  .card h2{ margin:0 0 8px; font-size: 20px; letter-spacing:.2px; }
+  .muted{ color: var(--muted); }
+
+  .apps{ display:grid; gap:12px; }
+  .app{
+    padding:14px16px; border-radius:14px;
+    border:1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+  }
+  .app b{ display:block; font-size:16px; margin-bottom:2px; }
+  .badge{
+    display:inline-block; padding:2px 8px; border-radius:999px;
+    font-size:12px; letter-spacing:.2px; background: rgba(56,189,248,.15); color: var(--accent);
+    border:1px solid rgba(56,189,248,.35); margin-left:6px;
+  }
+
+  .cta{
+    margin-top:18px; display:inline-block; padding:10px 14px;
+    border-radius:12px; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#0b1220; font-weight:700; border:0; box-shadow: 0 10px 22px rgba(56,189,248,.35);
+  }
+
+  footer{
+    margin-top:28px; padding-top:18px; border-top:1px dashed var(--border);
+    color: var(--muted); font-size:14px; text-align:center;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap" role="main" aria-label="USSTUDIOS landing">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Simple US monogram -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h4v8a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6h4v8c0 3.314-2.686 6-6 6h-2c-3.314 0-6-2.686-6-6V6z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 id="hero-title">USSTUDIOS</h1>
+          <p class="tagline">Innovative mobile app solutions — crafting modern, scalable experiences.</p>
+        </div>
+      </div>
+      <a class="cta" href="#contact" title="Jump to contact">Contact Us</a>
+    </section>
+
+    <!-- GRID -->
+    <div class="grid" role="region" aria-label="Company information">
+      <!-- About -->
+      <section class="card" aria-labelledby="about">
+        <h2 id="about">About Us</h2>
+        <p class="muted">
+          USSTUDIOS is a mobile app development company focused on building user-friendly and innovative applications.
+          Our mission is to deliver seamless digital experiences that engage users and provide real value.
+        </p>
+      </section>
+
+      <!-- Privacy -->
+      <section class="card" aria-labelledby="privacy">
+        <h2 id="privacy">Privacy Policy</h2>
+        <p class="muted">
+          We value user privacy and comply with platform and ad-network requirements.
+          View our full policy here:
+        </p>
+        <!-- TODO: Replace the href with your actual policy URL -->
+        <p><a href="https://example.com/privacy" target="_blank" rel="noopener">Read Privacy Policy</a></p>
+      </section>
+
+      <!-- Apps -->
+      <section class="card" aria-labelledby="apps">
+        <h2 id="apps">Our Apps</h2>
+        <div class="apps">
+          <div class="app">
+            <b>Tap2Earn <span class="badge">Coming Soon</span></b>
+            <span class="muted">Interactive rewards app with engaging tap mechanics.</span>
+          </div>
+          <div class="app">
+            <b>HealthBoost <span class="badge">Beta</span></b>
+            <span class="muted">Track goals and stay motivated with simple streaks.</span>
+          </div>
+          <div class="app">
+            <b>QuizMaster</b>
+            <span class="muted">Educational trivia for all ages with curated packs.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="card" aria-labelledby="contact">
+        <h2 id="contact">Contact Us</h2>
+        <p class="muted">
+          <!-- TODO: Update these details -->
+          <strong>Email:</strong> contact@usstudios.com<br>
+          <strong>Website:</strong> <a href="https://sites.google.com/view/usstudios" target="_blank" rel="noopener">sites.google.com/view/usstudios</a>
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="year"></span> USSTUDIOS. All rights reserved.
+    </footer>
+  </div>
+
+<script>
+  // Set current year (safe in Apps Script/iframe)
+  (function(){ try { document.getElementById('year').textContent = new Date().getFullYear(); } catch(e){} })();
+</script>
+</body>
+</html>
